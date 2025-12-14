@@ -45,13 +45,6 @@ class MenuController extends Controller {
                 'image' => $row['image_cover'] ?: 'workshop.jpg', // Fallback
             ];
         }
-
-        // 3. Prepare Carousel (Sync with Active Sectors + All Categories logic)
-        // The user wants to see "Reunion" (which ID=3) in carousel.
-        // We will include ALL categories in carousel, but only those with events will work as filters?
-        // NO, if we show it, it MUST work. "Work" means scrolling to section.
-        // If section is missing (no events), it does nothing.
-        // But "Reunion" HAS events. So verification confirmed.
         
         $carousel_events = [];
         foreach ($all_categories as $cat) {
