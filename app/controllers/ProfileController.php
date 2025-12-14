@@ -25,11 +25,6 @@ class ProfileController extends Controller {
             // Corrected: Filter by 'role' column directly
             $userCount = $pdo->query("SELECT COUNT(*) FROM users WHERE role = 'user'")->fetchColumn(); 
             
-            // Total users (including admins if desired, but let's stick to 'users' for the label)
-            //Actually, usually "Users" stat implies all registered accounts or just customers. 
-            // Let's use total count for broader impact or specific 'user' role. 
-            // The label in view is 'Users', so let's show all for now, or just 'user' role.
-            // Let's go with just 'user' role count to be specific about "customers".
             
             $categoryCount = $pdo->query("SELECT COUNT(*) FROM categories")->fetchColumn();
 
